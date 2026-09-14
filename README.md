@@ -24,8 +24,12 @@ Aula as quintas-feiras
 | [06.25](./06.25) | Exercícios corrigidos | ✅ |
 | [07.02](./07.02) | Exercícios corrigidos | ✅ |
 | 08.06 | Aula em sala | ✅ |
-| 08.13 | Primeiros exercícios | ✅ |
-| `08.20` | *(próxima aula)* | 🔜 |
+| 08.13 | Primeiros exercícios | desatualizado |
+| 08.20 | sem aula |  |
+| 08.27 | Árvore AVL | desatualizado |
+| 09.03 | Exercícios ARV. AVL  | desatualizado |
+| 09.10 | Trabalho 3º bimestre  | ✅ |
+| `09.17` | *(próxima aula)* | 🔜 |
 
 ## ✅ Tópicos cobertos até aqui
 
