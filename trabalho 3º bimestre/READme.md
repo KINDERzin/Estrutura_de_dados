@@ -35,8 +35,8 @@ O diferencial: quando o programa erra, ele **aprende** — pede o animal certo e
 ```bash
 git clone https://github.com/KINDERzin/Estrutura_de_dados.git
 cd Estrutura_de_dados
-gcc akinator.c -o akinator
-./akinator
+gcc akinator_2.c -o akinator_2
+./akinator_2
 ```
 
 ## 👤 Autor
