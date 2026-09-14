@@ -159,6 +159,7 @@ int main() {
    char jogarNovamente;
 
    inicializar_arvore(&raiz);
+   popular_arvore(&raiz);
    
    do {
       printf("Bem-vindo ao jogo de adivinhação de animais!\n");
