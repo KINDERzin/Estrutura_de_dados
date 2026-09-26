@@ -1,4 +1,4 @@
-typedef struct {
+typedef enum {
     true,
     false
 } Boolean;
@@ -21,22 +21,47 @@ void inicializar_arvore(struct Arvore* Arvore) {
     Arvore->raiz = NULL;
 }
 
-int diferenca_nos(struct No* noAtual, int diferenca) {
-    if(noAtual->esquerda != NULL && noAtual->direita != NULL)
-        pass;
+int maior_altura(struct No* noAtual) {
+    if(eh_nula(noAtual))
+        return 1;
 
-    else if(noAtual->esquerda != NULL)
-        diferenca -= 1;
+    int maior_esquerda = maior_altura(noAtual->esquerda);
+    int maior_direita = maior_altura(noAtual->direita);
 
-    else 
-        diferenca = -1;
+    if(maior_esquerda > maior_direita)
+        return maior_esquerda + 1;
 
-    if(diferenca >= -1  && diferenca <= 1) {
-        diferenca_nos(noAtual->esquerda, diferenca);
-        diferenca_nos(noAtual->direita, diferenca);
-    }
+    else
+        return maior_direita + 1;
+}
+
+int diferenca_nos(struct No* noAtual) {
+    if(noAtual == NULL)
+        return 1;
+
+    int tamanho_esq = maior_altura(noAtual->esquerda);
+    int tamanho_dir = maior_altura(noAtual->direita);
+
+    int diferenca = abs(tamanho_esq - tamanho_dir);
+
+    if(diferenca > 1)
+        return 0;
+
+    return diferenca_nos(noAtual->esquerda) && diferenca_nos(noAtual->direita);
 }
 
 int main() {
+    struct Arvore arvore;
+    struct No no;
 
+    inicializar_arvore(&arvore);
+
+    int equilibrio_arvore = diferenca_nos(arvore.raiz);
+
+    if(equilibrio_arvore > 1)
+        printf("A árvore está desbalanceada!\n");
+    else if(equilibrio_arvore >= -1 && equilibrio_arvore <= 1)
+        printf("A árvore está perfeitamente balanceada!\n");
+    else 
+        printf("Sla parça\n");
 }

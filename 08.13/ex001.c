@@ -27,7 +27,7 @@ int retornaMaior(struct Arvore* arv) {
    if(ehNula(arv->raiz))
         return 0;
 
-   while(noAtual != NULL) {
+   while(noAtual->direita != NULL) {
       noAtual = noAtual->direita;
    }
 
@@ -88,9 +88,8 @@ int main() {
 
    int maiorNumero = retornaMaior(&arvore);
     
-    if(maiorNumero == 0)
-        printf("Árvore vazia!\n");
-    else
-        printf("O maior número da árvore é %d\n", maiorNumero);
-
+   if(maiorNumero == 0)
+      printf("Árvore vazia!\n");
+   else
+      printf("O maior número da árvore é %d\n", maiorNumero);
 }
