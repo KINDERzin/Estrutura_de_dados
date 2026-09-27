@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 typedef struct celula {
     int id;
     struct celula *proximo;
@@ -17,7 +19,7 @@ int fila_vazia(struct fila *f) {
     return (f->primeiro == NULL && f->ultimo == NULL);
 }
 
-void enfileirar(struct fila *f, char nome[]) {
+void enfileirar(struct fila *f) {
     celula *atual = (celula *) malloc(sizeof(celula));
 
     atual->id = (fila_vazia(f)) ? 1 : f->ultimo->id + 1;
@@ -41,10 +43,11 @@ void desenfileirar(struct fila *f) {
     
     celula *atual = f->primeiro;
 
-    if(f->primeiro == f->ultimo) {
+    if (f->primeiro == f->ultimo) {
         f->primeiro = atual->proximo;
         inicializar_fila(f);
     }
+
     f->primeiro = atual->proximo;
     
     free(atual);
@@ -69,10 +72,11 @@ int main() {
     struct celula celula;
     
     inicializar_fila(&fila);
-                
-    enfileirar(&fila);
-    enfileirar(&fila);
-    enfileirar(&fila);
+    printf("Inicializado\n");
+
+    for(int i = 0; i < 3; i++)                
+        enfileirar(&fila);
+    
     imprimir_fila(&fila);
     
     desenfileirar(&fila);

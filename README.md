@@ -12,25 +12,26 @@ Este repositório é atualizado **semanalmente** com o conteúdo, exercícios e 
 ## 🗓️ Log semanal
 Aula as quintas-feiras
 
-| Data | Aula / Conteúdo | Status |
-|------|------------------|--------|
-| [03.12](./03.12) | Introdução / aula do dia | ✅ |
-| [04.16](./04.16) | Aula do dia | ✅ |
-| [04.23](./04.23) | Aula do dia | ✅ |
-| [05.07](./05.07%20-%20trabalho) | Trabalho avaliativo | ✅ |
-| [05.21](./05.21) | Aula do dia | ✅ |
-| [05.28](./05.28) | Aula do dia | ✅ |
-| [06.18](./06.18) | Aula do dia | ✅ |
-| [06.25](./06.25) | Exercícios corrigidos | ✅ |
-| [07.02](./07.02) | Exercícios corrigidos | ✅ |
-| 08.06 | Aula em sala | ✅ |
-| [08.13](./08.13/) | Primeiros exercícios | desatualizado |
-| 08.20 | sem aula | ✅ |
-| 08.27 | Árvore AVL | desatualizado |
-| 09.03 | Exercícios ARV. AVL  | desatualizado |
-| 09.10 | Trabalho 3º bimestre  | ✅ |
-| 09.17 | Busca binária | ✅ |
-| `09.17` | *(próxima aula)* | 🔜 |
+| Data              | Aula / Conteúdo          | Status |
+|-------------------|--------------------------|--------|
+| [03.12](./03.12)  | Exercícios para praticar |   ✅   |
+| [04.16](./04.16)  | Introdução lista         |   ✅   |
+| [04.23](./04.23)  | Continuação lista        |   ✅   |
+| [05.07](./05.07)  | Trabalho 1º bimestre     |   ✅   |
+| [05.21](./05.21)  | Intrudodução pilha       |   ✅   |
+| [05.28](./05.28)  | Exercícios de pilha      |   ✅   |
+| [06.18](./06.18)  | Introdução fila          |   ✅   |
+| [06.25](./06.25)  | Exercícios de fila       |   ✅   |
+| [07.02](./07.02)  | Exercícios de fila       |   ✅   |
+| 08.06             | Aula em sala             |   ✅   |
+| [08.13](./08.13)  | Introdução árvore        |   ✅   |
+| 08.20             | _sem aula_               |   ✅   |
+| 08.27             | Introdução árvore AVL    |   ✅   |
+| 09.03             | Exercícios de árvore AVL | desatualizado |
+| [09.10](./09.10)  | Trabalho 3º bimestre     |   ✅   |
+| [09.17](./09.17/) | Busca binária            |   ✅   |
+| 09.24             | _sem aula_               |   ✅   |
+| `10.01`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
 

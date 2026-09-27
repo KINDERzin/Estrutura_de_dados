@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 typedef enum {
    false,
    true

@@ -107,9 +107,11 @@ void jogar(struct Arvore *arvore) {
          else {
             char animal[100];
             char pergunta[255];
+
             // Animal
             printf("Então eu errei! Qual animal você pensou?\n");
             scanf(" %[^\n]", animal);
+            
             // Pergunta
             printf("Qual pergunta você gostaria de fazer para distinguir %s de %s?\n", animal, noAtual->texto);
             scanf(" %[^\n]", pergunta);
