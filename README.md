@@ -28,10 +28,11 @@ Aula as quintas-feiras
 | 08.20             | _sem aula_               |   ✅   |
 | 08.27             | Introdução árvore AVL    |   ✅   |
 | 09.03             | Exercícios de árvore AVL | desatualizado |
-| [09.10](./09.10)  | Trabalho 3º bimestre     |   ✅   |
+| [09.10](./09.10)  | Trabalho 3º bimestre 1-2 |   ✅   |
 | [09.17](./09.17/) | Busca binária            |   ✅   |
 | 09.24             | _sem aula_               |   ✅   |
-| `10.01`           | *(próxima aula)*         |   🔜   |
+| [10.01](./trabalho%203º%20bi/)           | Trabalho 3º bimestre 2-2 |   ✅   |
+| `10.08`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
 

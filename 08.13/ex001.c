@@ -1,8 +1,7 @@
 #include <stdlib.h>
 
 typedef enum {
-   false,
-   true
+   false, true
 } boolean;
 
 typedef struct No {
