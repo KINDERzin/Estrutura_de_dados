@@ -33,9 +33,9 @@ struct No* criar_no(int numero) {
    return novoNo;
 }
 
-No* inserirNo(struct No* noAtual, int numero) {
+struct No* inserirNo(struct No* noAtual, int numero) {
    if(ehNula(noAtual))
-      noAtual = criarNo(numero);
+      noAtual = criar_no(numero);
 
    else if(noAtual->numero < numero)
       noAtual->esquerda = inserirNo(noAtual, numero);

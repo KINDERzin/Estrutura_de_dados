@@ -2,7 +2,7 @@
 
 > Repositório de acompanhamento semanal da disciplina de **Estrutura de Dados** — Ciência da Computação (UNESPAR, Apucarana/PR).
 
-![Última atualização](https://img.shields.io/badge/última%20atualização-10.05-blue)
+![Última atualização](https://img.shields.io/badge/última%20atualização-10.06-blue)
 ![Linguagem](https://img.shields.io/badge/linguagem-C-informational)
 
 ## 🔄 Sobre este repositório
@@ -27,7 +27,7 @@ Aula as quintas-feiras
 | [08.13](./08.13)  | Introdução árvore        |   ✅   |
 | 08.20             | _sem aula_               |   ✅   |
 | 08.27             | Introdução árvore AVL    |   ✅   |
-| 09.03             | Exercícios de árvore AVL | desatualizado |
+| [09.03](./09.03/) | Exercícios de árvore AVL |  ✅  |
 | [09.10](./09.10)  | Trabalho 3º bimestre 1-2 |   ✅   |
 | [09.17](./09.17/) | Busca binária            |   ✅   |
 | 09.24             | _sem aula_               |   ✅   |
