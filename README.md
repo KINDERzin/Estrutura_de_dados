@@ -27,12 +27,14 @@ Aula as quintas-feiras
 | [08.13](./08.13)  | Introdução árvore        |   ✅   |
 | 08.20             | _sem aula_               |   ✅   |
 | 08.27             | Introdução árvore AVL    |   ✅   |
-| [09.03](./09.03/) | Exercícios de árvore AVL |  ✅  |
+| [09.03](./09.03/) | Exercícios de árvore AVL |   ✅   |
 | [09.10](./09.10)  | Trabalho 3º bimestre 1-2 |   ✅   |
 | [09.17](./09.17/) | Busca binária            |   ✅   |
 | 09.24             | _sem aula_               |   ✅   |
-| [10.01](./trabalho%203º%20bi/)           | Trabalho 3º bimestre 2-2 |   ✅   |
-| `10.08`           | *(próxima aula)*         |   🔜   |
+| [10.01](./10.01/) | Trabalho 3º bimestre 2-2 |   ✅   |
+| 10.08             | Tabela Hash              |   ✅   |
+| 10.15             | _Feriado_                |   ✅   |
+| `10.22`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
 
@@ -42,14 +44,14 @@ Aula as quintas-feiras
 - [x] Árvore binárias
 - [x] Árvore AVL
 - [x] Árvores B
-- [ ] Pesquisa sequencial
-- [ ] Algoritmos de ordenação
-- [ ] Algoritmos de busca
-- [ ] Tabela Hash
+- [x] Pesquisa sequencial
+- [x] Algoritmos de ordenação
+- [x] Algoritmos de busca
+- [ ] Tabela Hash -> estudando
 
 ## 📁 Outras pastas
 
-- `estruturas` — código base de cada estrutura estudada
+- [`estruturas`](./estruturas/) — código base de cada estrutura estudada
 
 ## 🛠️ Tecnologias
 
