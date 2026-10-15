@@ -1,59 +1,42 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum {
-	false, true
-} boolean;
+#include "boolean.h"
+#include "arvore_avl.h"
 
-typedef struct NoAvl {
-	int numero;
-	int altura;
-	struct NoAvl *direita;
-	struct NoAvl *esquerda;
-} NoAvl;
-
-typedef struct ArvoreAvl {
-	struct NoAvl *raiz;
-} ArvoreAvl;
-
-boolean eh_nulo(struct NoAvl *noAtual) {
-	return noAtual == NULL;
-}
-
-void inicializar_arvore(struct ArvoreAvl *arv) {
+void inicializar_arvore_avl(struct ArvoreAvl *arv) {
 	arv->raiz = NULL;
 }
 
-int altura_no(struct NoAvl *noAtual) {
+boolean eh_nulo_avl(struct NoAvl* noAtual) {
+   return noAtual == NULL;
+}
+
+int altura_no_avl(struct NoAvl *noAtual) {
 	return (noAtual == NULL) ? 0 : noAtual->altura;
 }
 
-int maior_altura(struct NoAvl *noAtual) {
-	if (eh_nulo(noAtual))
+int maior_altura_avl(struct NoAvl *noAtual) {
+	if (eh_nulo_avl(noAtual))
 		return 0;
 
-	int maior_esquerda = maior_altura(noAtual->esquerda);
-	int maior_direita = maior_altura(noAtual->direita);
+	int altura_esq = altura_no_avl(noAtual->esquerda);
+	int altura_dir = altura_no_avl(noAtual->direita);
 
-	if (maior_esquerda > maior_direita)
-		return maior_esquerda + 1;
-
-	else
-		return maior_direita + 1;
+	return (altura_esq > altura_dir ? altura_esq : altura_dir) + 1;
 }
 
-int fator_balanceamento(struct NoAvl *noAtual) {
-	if (eh_nulo(noAtual))
+int fator_balanceamento_avl(struct NoAvl *noAtual) {
+	if (eh_nulo_avl(noAtual))
 		return 0;
 
-	int altura_esq = altura_no(noAtual->esquerda);
-	int altura_dir = altura_no(noAtual->direita);
+	int altura_esq = altura_no_avl(noAtual->esquerda);
+	int altura_dir = altura_no_avl(noAtual->direita);
 
 	return altura_dir - altura_esq;
 }
 
-struct NoAvl *rotacao_direita(struct NoAvl *noAtual) {
+struct NoAvl *rotacao_direita_avl(struct NoAvl *noAtual) {
 	if (noAtual == NULL || noAtual->esquerda == NULL)
 		return noAtual;
 
@@ -68,13 +51,13 @@ struct NoAvl *rotacao_direita(struct NoAvl *noAtual) {
 	// Nova raiz recebe o antigo nó na direita
 	novoPrincipal->direita = noAtual;
 	// Atualiza as alturas
-	noAtual->altura = maior_altura(noAtual) + 1;
-	novoPrincipal->altura = maior_altura(novoPrincipal) + 1;
+	noAtual->altura = maior_altura_avl(noAtual);
+	novoPrincipal->altura = maior_altura_avl(novoPrincipal);
 
 	return novoPrincipal;
 }
 
-struct NoAvl *rotacao_esquerda(struct NoAvl *noAtual) {
+struct NoAvl *rotacao_esquerda_avl(struct NoAvl *noAtual) {
 	if (noAtual == NULL || noAtual->direita == NULL)
 		return noAtual;
 
@@ -89,55 +72,55 @@ struct NoAvl *rotacao_esquerda(struct NoAvl *noAtual) {
 	// Nova raiz recebe o antigo nó na esquerda
 	novoPrincipal->esquerda = noAtual;
 	// Atualiza as alturas
-	noAtual->altura = maior_altura(noAtual) + 1;
-	novoPrincipal->altura = maior_altura(novoPrincipal) + 1;
+	noAtual->altura = maior_altura_avl(noAtual);
+	novoPrincipal->altura = maior_altura_avl(novoPrincipal);
 
 	return novoPrincipal;
 }
 
-struct NoAvl *rotacao_dupla_direita(struct NoAvl *noAtual) {
+struct NoAvl* rotacao_dupla_direita_avl(struct NoAvl *noAtual) {
 	if (noAtual == NULL || noAtual->esquerda == NULL)
 		return noAtual;
 
-	noAtual->esquerda = rotacao_esquerda(noAtual->esquerda);
+	noAtual->esquerda = rotacao_esquerda_avl(noAtual->esquerda);
 
-	return rotacao_direita(noAtual);
+	return rotacao_direita_avl(noAtual);
 }
 
-struct NoAvl *rotacao_dupla_esquerda(struct NoAvl *noAtual) {
+struct NoAvl* rotacao_dupla_esquerda_avl(struct NoAvl *noAtual) {
 	if (noAtual == NULL || noAtual->direita == NULL)
 		return noAtual;
 
-	noAtual->direita = rotacao_direita(noAtual->direita);
+	noAtual->direita = rotacao_direita_avl(noAtual->direita);
 
-	return rotacao_esquerda(noAtual);
+	return rotacao_esquerda_avl(noAtual);
 }
 
-struct NoAvl *balancear(struct NoAvl *noAtual) {
+struct NoAvl* balancear_avl(struct NoAvl *noAtual) {
 	if (noAtual == NULL)
 		return noAtual;
 
-	int fator = fator_balanceamento(noAtual);
+	int fator = fator_balanceamento_avl(noAtual);
 
 	if (fator > 1)
 	{
-		if (fator_balanceamento(noAtual->direita) >= 0)
-			return rotacao_esquerda(noAtual);
+		if (fator_balanceamento_avl(noAtual->direita) >= 0)
+			return rotacao_esquerda_avl(noAtual);
 		else
-			return rotacao_dupla_esquerda(noAtual);
+			return rotacao_dupla_esquerda_avl(noAtual);
 	}
 	else if (fator < -1)
 	{
-		if (fator_balanceamento(noAtual->esquerda) <= 0)
-			return rotacao_direita(noAtual);
+		if (fator_balanceamento_avl(noAtual->esquerda) <= 0)
+			return rotacao_direita_avl(noAtual);
 		else
-			return rotacao_dupla_direita(noAtual);
+			return rotacao_dupla_direita_avl(noAtual);
 	}
 	else
 		return noAtual;
 }
 
-struct NoAvl *criar_no(int numero) {
+struct NoAvl* criar_no_avl(int numero) {
 	NoAvl *novoNo = (struct NoAvl *)malloc(sizeof(struct NoAvl));
 
 	novoNo->numero = numero;
@@ -149,17 +132,32 @@ struct NoAvl *criar_no(int numero) {
 	return novoNo;
 }
 
-struct NoAvl *inserir_no(struct NoAvl *noAtual, int numero) {
-	if (eh_nulo(noAtual))
-		noAtual = criar_no(numero);
+struct NoAvl* inserir_no_avl(struct NoAvl *noAtual, int numero) {
+	if (eh_nulo_avl(noAtual))
+		noAtual = criar_no_avl(numero);
 
-	else if (noAtual->numero < numero)
-		noAtual->esquerda = inserir_no(noAtual->esquerda, numero);
+	else if (numero < noAtual->numero )
+		noAtual->esquerda = inserir_no_avl(noAtual->esquerda, numero);
 
-	else if (noAtual->numero > numero)
-		noAtual->direita = inserir_no(noAtual->direita, numero);
+	else if (numero > noAtual->numero)
+		noAtual->direita = inserir_no_avl(noAtual->direita, numero);
 
-	noAtual->altura = maior_altura(noAtual) + 1;
+	noAtual->altura = maior_altura_avl(noAtual);
 
-	return balancear(noAtual);
+	return balancear_avl(noAtual);
+}
+
+struct NoAvl* retorna_no_avl(struct NoAvl *noAtual, int numero, int *comparacoes) {
+	if (eh_nulo_avl(noAtual))
+		return NULL;
+
+	(*comparacoes)++;
+	if (numero == noAtual->numero)
+		return noAtual;
+
+	(*comparacoes)++;
+	if (numero < noAtual->numero)
+		return retorna_no_avl(noAtual->esquerda, numero, comparacoes);
+	else
+		return retorna_no_avl(noAtual->direita, numero, comparacoes);
 }

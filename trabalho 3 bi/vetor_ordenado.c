@@ -1,28 +1,19 @@
-#ifndef VETOR_ORDENADO_H
-#define VETOR_ORDENADO_H
-
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef enum {
-   false, true
-} boolean;
+#include "boolean.h"
+#include "vetor_ordenado.h"
 
-typedef struct Vetor {
-   int tamanho;
-   int* vetor;
-} Vetor;
-
-boolean eh_nulo_vo(struct Vetor* vetor) {
+boolean eh_nulo_vo(struct VetorOrdenado* vetor) {
    return vetor->vetor == NULL;
 }
 
-void inicializa_vetor_vo(struct Vetor *vetor) {
+void inicializa_vetor_vo(struct VetorOrdenado *vetor) {
    vetor->tamanho = 0;
    vetor->vetor = NULL;
 }
 
-void popular_vetor_vo(struct Vetor *vetor, int tamanho) {
+void popular_vetor_vo(struct VetorOrdenado *vetor, int tamanho) {
    vetor->tamanho = tamanho;
    vetor->vetor = (int*) malloc(tamanho * sizeof(int));
 
@@ -30,21 +21,27 @@ void popular_vetor_vo(struct Vetor *vetor, int tamanho) {
       vetor->vetor[i] = rand();
 }
 
-void ordenar_vetor_vo(struct Vetor *vetor) {
+void ordenar_vetor_vo(struct VetorOrdenado *vetor) {
    int aux;
+   bool ordenado;
 
-   for(int i = 0; i < vetor->tamanho; i++)
+   for(int i = 0; i < vetor->tamanho; i++) {
+      ordenado = true;
       for(int j = 0; j < vetor->tamanho - 1; j++)
          if(vetor->vetor[j] > vetor->vetor[j + 1]) {
+            ordenado = false;
             aux = vetor->vetor[j];
 
             vetor->vetor[j] = vetor->vetor[j + 1];
             vetor->vetor[j + 1] = aux;
          }   
+      
+      if(ordenado) return;
+   }      
 }
 
-void retornar_numeros_ordenados(struct Vetor* vetor, int numero, int *comparacoes) {
-   // Tamanmho -> 0 até (tamanho - 1)
+void retornar_numeros_ordenados(struct VetorOrdenado* vetor, int numero, int *comparacoes) {
+   // Tamanmho -> 0 até (n - 1)
    int esq = 0;
    int dir = vetor->tamanho - 1; 
    
@@ -52,20 +49,18 @@ void retornar_numeros_ordenados(struct Vetor* vetor, int numero, int *comparacoe
    while (esq <= dir) {
       int meio = (esq + dir) / 2;
 
-      (*comparacoes)++;
       if (numero == vetor->vetor[meio]) {
-         printf("Número %d encontrado na posição %d\n", numero, meio);
+         (*comparacoes) += 1;
          return;
       }
-
-      else if (numero < vetor->vetor[meio])
+      
+      else if (numero < vetor->vetor[meio]) {
+         (*comparacoes) += 2;
          dir = meio - 1;
-
-      else if (numero > vetor->vetor[meio])
+      }
+      else if (numero > vetor->vetor[meio]) {
+         (*comparacoes) += 3;
          esq = meio + 1;
+      }   
    }
-
-   printf("Número %d não encontrado no vetor ordenado.\n", numero);
 }
-
-#endif

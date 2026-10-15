@@ -1,18 +1,6 @@
 #include <stdlib.h>
-
-typedef enum {
-   false, true
-} boolean;
-
-typedef struct NoAbb {
-   int valor;
-   struct NoAbb* direita;
-   struct NoAbb* esquerda;
-} NoAbb;
-
-typedef struct ArvoreAbb {
-   struct NoAbb* raiz;
-} ArvoreAbb;
+#include "boolean.h"
+#include "arvore_abb.h"
 
 void inicializar_arvore_abb(struct ArvoreAbb *arv) {
    arv->raiz = NULL;
@@ -36,10 +24,10 @@ struct NoAbb* inserir_no_abb(struct NoAbb* noAtual, int valor) {
    if(eh_nula_abb(noAtual))
       noAtual = criar_no_abb(valor);
 
-   else if(noAtual->valor < valor)
+   else if(valor < noAtual->valor)
       noAtual->esquerda = inserir_no_abb(noAtual->esquerda, valor);
    
-   else if(noAtual->valor > valor)
+   else if(valor > noAtual->valor)
       noAtual->direita = inserir_no_abb(noAtual->direita, valor);
 
    return noAtual;

@@ -1,19 +1,16 @@
 #ifndef VETOR_ORDENADO_H
 #define VETOR_ORDENADO_H
 
-typedef enum {
-   false, true
-} boolean;
+#include "boolean.h"
 
-typedef struct VetorVo {
+typedef struct VetorOrdenado {
    int tamanho;
    int* vetor;
-} VetorVo;
+} VetorOrdenado;
 
-boolean eh_nulo_vo(struct VetorVo* vetor);
-void inicializa_vetor_vo(struct VetorVo *vetor);
-void popular_vetor_vo(struct VetorVo *vetor, int tamanho);
-void ordenar_vetor_vo(struct VetorVo *vetor);
-void retornar_numeros_ordenados(struct VetorVo* vetor, int numero, int *comparacoes);
+void inicializa_vetor_vo(struct VetorOrdenado *vetor);
+void popular_vetor_vo(struct VetorOrdenado *vetor, int tamanho);
+void ordenar_vetor_vo(struct VetorOrdenado *vetor);
+void retornar_numeros_ordenados(struct VetorOrdenado* vetor, int numero, int *comparacoes);
 
 #endif

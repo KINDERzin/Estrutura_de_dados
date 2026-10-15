@@ -1,0 +1,19 @@
+========================================
+     RELATORIO DE DESEMPENHO (BUSCAS)
+========================================
+
+--- LOTE 50K ---
+Vetor Ordenado (Busca Binaria): 176418 comparacoes (media 35.28), 0.216 us por busca
+Vetor Desordenado (Sequencial): 125058797 comparacoes (media 25011.76), 70.800 us por busca
+Arvore ABB: 200584 comparacoes (media 40.12), 0.388 us por busca
+Arvore AVL: 143744 comparacoes (media 28.75), 0.287 us por busca
+--- LOTE 100K ---
+Vetor Ordenado (Busca Binaria): 189483 comparacoes (media 37.90), 0.245 us por busca
+Vetor Desordenado (Sequencial): 250926573 comparacoes (media 50185.31), 173.400 us por busca
+Arvore ABB: 215410 comparacoes (media 43.08), 0.455 us por busca
+Arvore AVL: 154820 comparacoes (media 30.96), 0.347 us por busca
+--- LOTE 150K ---
+Vetor Ordenado (Busca Binaria): 195769 comparacoes (media 39.15), 0.273 us por busca
+Vetor Desordenado (Sequencial): 375229372 comparacoes (media 75045.87), 230.400 us por busca
+Arvore ABB: 220710 comparacoes (media 44.14), 0.500 us por busca
+Arvore AVL: 160082 comparacoes (media 32.02), 0.332 us por busca

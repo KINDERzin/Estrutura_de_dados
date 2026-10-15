@@ -1,9 +1,7 @@
 #ifndef ARVORE_AVL_H
 #define ARVORE_AVL_H
 
-typedef enum {
-	false, true
-} boolean;
+#include "boolean.h"
 
 typedef struct NoAvl {
 	int numero;
@@ -16,17 +14,17 @@ typedef struct ArvoreAvl {
 	struct NoAvl *raiz;
 } ArvoreAvl;
 
-boolean eh_nulo(struct NoAvl *noAtual);
-void inicializar_arvore(struct ArvoreAvl *arv);
-int altura_no(struct NoAvl *noAtual);
-int maior_altura(struct NoAvl *noAtual);
-int fator_balanceamento(struct NoAvl *noAtual);
-struct NoAvl *rotacao_direita(struct NoAvl *noAtual);
-struct NoAvl *rotacao_esquerda(struct NoAvl *noAtual);
-struct NoAvl *rotacao_dupla_direita(struct NoAvl *noAtual);
-struct NoAvl *rotacao_dupla_esquerda(struct NoAvl *noAtual);
-struct NoAvl *balancear(struct NoAvl *noAtual);
-struct NoAvl *criar_no(int numero);
-struct NoAvl *inserir_no(struct NoAvl *noAtual, int numero);
+void inicializar_arvore_avl(struct ArvoreAvl *arv);
+int altura_no_avl(struct NoAvl *noAtual);
+int maior_altura_avl(struct NoAvl *noAtual);
+int fator_balanceamento_avl(struct NoAvl *noAtual);
+struct NoAvl *rotacao_direita_avl(struct NoAvl *noAtual);
+struct NoAvl *rotacao_esquerda_avl(struct NoAvl *noAtual);
+struct NoAvl *rotacao_dupla_direita_avl(struct NoAvl *noAtual);
+struct NoAvl *rotacao_dupla_esquerda_avl(struct NoAvl *noAtual);
+struct NoAvl *balancear_avl(struct NoAvl *noAtual);
+struct NoAvl *criar_no_avl(int numero);
+struct NoAvl *inserir_no_avl(struct NoAvl *noAtual, int numero);
+struct NoAvl *retorna_no_avl(struct NoAvl *noAtual, int numero, int *comparacoes);
 
 # endif

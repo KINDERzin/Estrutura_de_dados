@@ -2,8 +2,10 @@
 #ifndef ARVORE_ABB_H
 #define ARVORE_ABB_H
 
+#include "boolean.h"
+
 typedef struct NoAbb {
-    int valor;
+   int valor;
    struct NoAbb* esquerda;
    struct NoAbb* direita;
 } NoAbb;
