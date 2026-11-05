@@ -30,11 +30,13 @@ Aula as quintas-feiras
 | [09.03](./09.03/) | Exercícios de árvore AVL |   ✅   |
 | [09.10](./09.10)  | Trabalho 3º bimestre 1-2 |   ✅   |
 | [09.17](./09.17/) | Busca binária            |   ✅   |
-| 09.24             | _sem aula_               |   ✅   |
+| 09.24             | _Sem aula_               |   ✅   |
 | [10.01](./10.01/) | Trabalho 3º bimestre 2-2 |   ✅   |
 | 10.08             | Tabela Hash              |   ✅   |
 | 10.15             | _Feriado_                |   ✅   |
-| `10.22`           | *(próxima aula)*         |   🔜   |
+| 10.22             | Prova                    |   ✅   |
+| [11.05](./11.15/) | Algoritmos de ordenação  |   🔃   |
+| `11.12`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
 
