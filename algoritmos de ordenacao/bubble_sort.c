@@ -1,15 +1,17 @@
-void trocar(int* a, int* b) {
-    int aux = a;
+#include <stdio.h>
 
-    *b = *a;
-    *a = aux;
+void trocar(int* a, int* b) {
+    int aux = *a;
+
+    *a = *b;
+    *b = aux;
 }
 
-void bubble_sort(int vetor[], int n) {
-    for(int i = 1; i < n; i++)
-        for(int j = 0; j < (n - k); j++)
-            if(vetor[i] > vetor[i + 1])
-                trocar(&vetor[i], &vetor[i + 1]);
+void bubble_sort(int vetor[], int tamanho) {
+    for(int i = 1; i < tamanho; i++)
+        for(int j = 0; j < (tamanho - i); j++)
+            if(vetor[j] > vetor[j + 1])
+                trocar(&vetor[j], &vetor[j + 1]);
 }
 
 int main() {
@@ -17,12 +19,12 @@ int main() {
 
     printf("Insira 5 numeros:\n");
 
-    for(int i = o; i < 5; i++) {
-        printf("Numero %.2d: ", i);
-        scanf("%d", teste[1]);
+    for(int i = 0; i < 5; i++) {
+        printf("Numero %d: ", (i + 1));
+        scanf("%d", &teste[i]);
     }
 
-    printf("VETOR INSERIDO\n\n")
+    printf("\n\nVETOR INSERIDO\n");
 
     for(int i = 0; i < 5; i++)
         printf("%d ", teste[i]);
@@ -30,9 +32,11 @@ int main() {
 
     bubble_sort(teste, 5);
 
-    printf("VETOR ORDENADO\n\n");
+    printf("\nVETOR ORDENADO\n");
 
     for(int i = 0; i < 5; i++)
         printf("%d ", teste[i]);
     printf("\n");
+
+    return 0;
 }
