@@ -2,7 +2,7 @@
 
 > Repositório de acompanhamento semanal da disciplina de **Estrutura de Dados** — Ciência da Computação (UNESPAR, Apucarana/PR).
 
-![Última atualização](https://img.shields.io/badge/última%20atualização-11.05-blue)
+![Última atualização](https://img.shields.io/badge/última%20atualização-11.06-blue)
 ![Linguagem](https://img.shields.io/badge/linguagem-C-informational)
 
 ## 🔄 Sobre este repositório
@@ -35,7 +35,7 @@ Aula as quintas-feiras
 | 10.08             | Tabela Hash              |   ✅   |
 | 10.15             | _Feriado_                |   ✅   |
 | 10.22             | Prova                    |   ✅   |
-| [11.05](./11.15/) | Algoritmos de ordenação  |   🔃   |
+| [11.05]           | Algoritmos de ordenação  |   ✅   |
 | `11.12`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
@@ -49,7 +49,7 @@ Aula as quintas-feiras
 - [x] Pesquisa sequencial
 - [x] Algoritmos de ordenação
 - [x] Algoritmos de busca
-- [ ] Tabela Hash -> estudando
+- [ ] Tabela Hash
 
 ## 📁 Outras pastas
 
