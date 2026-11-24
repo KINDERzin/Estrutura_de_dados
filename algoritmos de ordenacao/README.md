@@ -4,12 +4,14 @@
 
 **Veja cada algoritmo ordenar, passo a passo, com números.**
 
-![Algoritmos](https://img.shields.io/badge/algoritmos-4-8A2BE2?style=for-the-badge)
+![Algoritmos](https://img.shields.io/badge/algoritmos-5-8A2BE2?style=for-the-badge)
 ![Animações](https://img.shields.io/badge/animações-GIF-2ECC71?style=for-the-badge)
 
-<sub>Todas as animações usam o mesmo vetor de entrada:</sub>
+<sub>Quick, Selection, Bubble e Insertion usam o mesmo vetor de entrada:</sub>
 
 `[64, 25, 12, 22, 11, 90, 47, 33, 5]`
+
+<sub>O Counting Sort usa outro vetor, `[7, 2, 9, 0, 4, 2, 8, 5, 1, 6]`, porque a animação mostra um balde para cada valor até o maior (K). Com K = 90 o GIF ficaria largo demais.</sub>
 
 </div>
 
@@ -22,6 +24,8 @@
 - [Selection sort](#selection-sort)
 - [Bubble sort](#bubble-sort)
 - [Insertion sort](#insertion-sort)
+- [Counting sort](#counting-sort)
+- [Legenda das cores](#legenda-das-cores)
 
 ---
 
@@ -33,6 +37,9 @@
 | **Selection sort** | O(n²) | O(n²) | O(n²) | O(1) | ❌ |
 | **Bubble sort** | O(n) | O(n²) | O(n²) | O(1) | ✅ |
 | **Insertion sort** | O(n) | O(n²) | O(n²) | O(1) | ✅ |
+| **Counting sort** | O(n + k) | O(n + k) | O(n + k) | O(n + k) | ✅ |
+
+> No Counting sort, `k` é o maior valor do vetor.
 
 ---
 
@@ -108,15 +115,33 @@ Constrói a ordenação aos poucos. Pega um número por vez, compara com os elem
 
 ---
 
+## Counting sort
+
+> 🧮 *Não compara: conta quantas vezes cada valor aparece.*
+
+Não compara elementos entre si. Conta a frequência de cada valor em um vetor auxiliar, transforma essas contagens em posições limite (soma cumulativa) e preenche o vetor de saída **de trás para frente**, o que mantém a ordem de valores iguais (estável). Só funciona com inteiros não negativos ($0$ até $K$) e precisa de memória extra.
+
+| Melhor | Médio | Pior |
+|:---:|:---:|:---:|
+| $O(N + K)$ | $O(N + K)$ | $O(N + K)$ *(sobe quando $K \gg N$)* |
+
+<p align="center">
+  <img src="counting_sort.gif" alt="Animação Counting Sort" width="720">
+</p>
+
+<p align="right"><a href="#-sumário">⬆ voltar ao sumário</a></p>
+
+---
+
 ## Legenda das cores
 
 | Cor | Nome | Significado | Aparece em |
 |:---:|:---|:---|:---|
 | ⬛ | Cinza | Elemento ainda não visitado | Todos |
-| 🟨 | Amarelo | Elemento sendo comparado | Todos |
-| 🟥 | Vermelho | Elementos sendo trocados | Todos |
-| 🟩 | Verde | Elemento já na posição final | Todos |
+| 🟨 | Amarelo | Elemento sendo comparado (no Counting sort, elemento sendo lido) | Todos |
+| 🟥 | Vermelho | Elementos sendo trocados | Quick, Selection, Bubble e Insertion |
+| 🟩 | Verde | Elemento já na posição final (no Counting sort, resultado final) | Todos |
 | 🟦 | Azul | Menor valor encontrado até agora | Selection sort |
 | 🟧 | Laranja | Posição `i`, onde entra o próximo valor menor que o pivô | Quick sort |
-| 🟪 | Roxo | Pivô (Quick sort) ou elemento que está sendo inserido (Insertion sort) | Quick sort e Insertion sort |
-| 🟢 | Verde escuro | Parte já ordenada, mas ainda sujeita a deslocamento | Insertion sort |
+| 🟪 | Roxo | Pivô (Quick), elemento sendo inserido (Insertion) ou valor sendo escrito no contador, nas posições ou na saída (Counting) | Quick, Insertion e Counting sort |
+| 🟢 | Verde escuro | Parte já ordenada, mas ainda sujeita a deslocamento (Insertion), ou posição da saída já preenchida (Counting) | Insertion e Counting sort |

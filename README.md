@@ -36,8 +36,10 @@ Aula as quintas-feiras
 | 10.15             | _Feriado_                |   ✅   |
 | 10.22             | Prova                    |   ✅   |
 | [11.04](./estruturas) | Algoritmos de ordenação  |   ✅   |
-| `11.11`           | Aula em sala             |   ✅   |
-| `11.18`           | *(próxima aula)*         |   🔜   |
+| 11.11             | Aula em sala             |   ✅   |
+| [11.18](./11.18/) 
+| Trabalho 4º bimestre     |   ✅   |
+| `11.25`           | *(próxima aula)*         |   🔜   |
 
 ## ✅ Tópicos cobertos até aqui
 
