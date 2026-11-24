@@ -54,7 +54,7 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
     }
     printf("\n");
     
-    printf("=== ETAPA 2: POSICOES LIMITE (contar a ultima posicao de cada elemento)\n");
+    printf("=== ETAPA 2: POSICOES LIMITE (contar a ultima posicao de cada elemento) ===\n");
     for(int i = 0; i < maior_numero ; i++){
         printf("Numero %d | Posicao %d\n", i, vetor_posicoes[i]);
     }
