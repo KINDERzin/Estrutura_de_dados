@@ -1,5 +1,3 @@
-
-
 void inicializa_vetor(int *vetor, int tamanho) {
     for(int i = 0; i < tamanho; i++)
         vetor[i] = 0;
@@ -46,14 +44,14 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
     printf("=== ETAPA 1: CONTAGEM DE FREQUENCIA (contar as ocorrencias de cada elemento) ===\n");
     for(int i = 0; i < maior_numero ; i++) {
         if(vetor_contador[i] == 0)
-           printf("O valor [%d] apareceu nenhuma vez.\n", vetor_contador[i]);
+           printf("O valor [%d] apareceu nenhuma vez.\n", i);
         else if(vetor_contador[i] == 1)
             printf("O valor [%d] apareceu %d vez.\n", i, vetor_contador[i]);
         else
             printf("O valor [%d] apareceu %d vezes.\n", i, vetor_contador[i]);
     }
     printf("\n");
-    
+
     printf("=== ETAPA 2: POSICOES LIMITE (contar a ultima posicao de cada elemento) ===\n");
     for(int i = 0; i < maior_numero ; i++){
         printf("Numero %d | Posicao %d\n", i, vetor_posicoes[i]);
