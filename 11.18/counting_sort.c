@@ -33,17 +33,6 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
         // Soma as quantidade de ocorrência do elemento atual e as posíções anteriores 
         vetor_posicoes[i] = vetor_contador[i] + vetor_posicoes[i - 1];
 
-    // Preenche o vetor final
-    for(int i = (tamanho_vetor - 1); i >= 0; i--) {
-        int valor = vetor[i];
-
-        // Pega a posição do valor pelo vetor das ocorrências
-        // vetor_posicoes[valor] - 1 para pegar a posição correta, pois é de (0 - N)
-        vetor_ordenado[vetor_posicoes[valor] - 1] = valor; 
-        // Decrementa a posição para o próxima ocorrência
-        vetor_posicoes[valor]--; 
-    }
-
     printf("=== ETAPA 1: CONTAGEM DE FREQUENCIA (contar as ocorrencias de cada elemento) ===\n");
     for(int i = 0; i < maior_numero ; i++) {
         if(vetor_contador[i] == 0)
@@ -61,11 +50,40 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
     }
     printf("\n");
 
+    // Preenche o vetor final
     printf("=== ETAPA 3: ORDENAR O VETOR ===\n");
+
+    printf("Vetor posicoes\n");
+    for(int i = 0; i < maior_numero; i++) {
+        printf("%d ", vetor_posicoes[i]);
+    }
+    printf("\n\n");
+    for(int i = (tamanho_vetor - 1); i >= 0; i--) {
+        int valor = vetor[i];
+
+        // Pega a posição do valor pelo vetor das ocorrências
+        // vetor_posicoes[valor] - 1 para pegar a posição correta, pois é de (0 - N)
+        vetor_ordenado[vetor_posicoes[valor] - 1] = valor;
+        // Decrementa a posição para o próxima ocorrência
+        vetor_posicoes[valor]--;
+
+        printf("Ordenando o vetor\n");
+        for(int i = 0; i < tamanho_vetor; i++) {
+            printf("%d ", vetor_ordenado[i]);
+        }
+        printf("\n");
+        printf("Posicoes atualizadas\n");
+        for(int i = 0; i < maior_numero; i++) {
+            printf("%d ", vetor_posicoes[i]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    printf("VETOR ORDENADO\n");
     for(int i = 0; i < tamanho_vetor; i++) {
         printf("%d ", vetor_ordenado[i]);
     }
-    printf("\n");
 
     free(vetor_contador);
     free(vetor_ordenado);
