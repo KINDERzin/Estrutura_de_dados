@@ -11,9 +11,11 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
 
     maior_numero++;
     
-    // Vetores dinâmicos para ser mais eficiente
+    // Armazena a ocorrência de cada elemento
     int *vetor_contador = malloc (maior_numero  * sizeof(int));
+    // Armazena a posição final de cada elemento
     int *vetor_posicoes = malloc (maior_numero  * sizeof(int));
+    // É o obvio o que esse faz
     int *vetor_ordenado = malloc (tamanho_vetor * sizeof(int));
 
     // Inicializa os valores com 0 para não dar lixo de memória/erro
@@ -28,6 +30,7 @@ void counting_sort(int tamanho_vetor, int vetor[]) {
     // Marca as posições finais de cada número
     vetor_posicoes[0] = vetor_contador[0];
     for(int i = 1; i < maior_numero ; i++)
+        // Soma as quantidade de ocorrência do elemento atual e as posíções anteriores 
         vetor_posicoes[i] = vetor_contador[i] + vetor_posicoes[i - 1];
 
     // Preenche o vetor final
